@@ -44,3 +44,12 @@ function calculateRentalCost(days, carType, insurance = false) {
 //Call the function to plug in the parameters as the if-else statments filter to apply the right calculation
 console.log(`Total Rental Cost: $${calculateRentalCost(3, "Economy", true)}`)
 console.log(`Total Rental Cost: $${calculateRentalCost(5, "Luxury", false)}`)
+
+
+//Task 5: Returning Values
+function calculateLoanPayment(principal, rate, time) {
+    totalPayment = principal + (principal*rate*time);
+    return totalPayment}
+
+console.log(`Total Payment: $${calculateLoanPayment(1000, 0.05, 2).toFixed(2)}`)
+console.log(`Total Payment: $${calculateLoanPayment(5000, 0.07, 3).toFixed(2)}`)
