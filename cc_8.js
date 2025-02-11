@@ -16,3 +16,15 @@ function calculateDiscount(price, discountRate){  //Write a function to calculat
 //Call the function to plug in the values for the parameters and calculate the final price
 console.log(`Final Price: $${calculateDiscount(100, 0.2).toFixed(2)}`)
 console.log(`Final Price: $${calculateDiscount(250, 0.15).toFixed(2)}`)
+
+
+//Taks 3: Arrow Function
+const calculateServiceFee = (amount, serviceType) => {   //Write an arrow function that calculates the service fee based on the parameters
+    if (serviceType === "Premium") amount = amount*0.15;
+    else if (serviceType === "Standard") amount = amount*0.10;
+    else if (serviceType === "Basic") amount = amount*0.05;
+    return amount;}  //Return the service fee amount to where it is called after calculating it with the parameter values
+
+//Call the function to plug in the values for the parameters to calculate the service fee
+console.log(`Service Fee: $${calculateServiceFee(200, "Premium").toFixed(2)}`)
+console.log(`Service Fee: $${calculateServiceFee(500, "Standard").toFixed(2)}`)
