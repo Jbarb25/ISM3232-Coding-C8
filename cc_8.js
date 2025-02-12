@@ -64,3 +64,26 @@ function filterLargeTransactions(transactions, filterFunction){
 
 //The function will filter the transactions by applying the filter that is plugged in when it is called
 console.log(`Filtered Transactions [${filterLargeTransactions(transactions, amount => amount > 1000)}]`)
+
+
+//Task 7: Closures
+function createCartTracker(){
+    let totalCart = 0;
+
+    return function(itemCost){   // The function createBudgetTracker will keep a running total of the expenses by taking the expenses and adding it to the total each time
+        totalCart += itemCost;
+        return totalCart;}}
+
+let cart = createCartTracker();  //The function will call the function to keep a total and then when called with a value, will add the expense to the total.
+console.log(`Total Cart Value: $${cart(20)}`);
+console.log(`Total Cart Value: $${cart(35)}`);
+
+
+//Task 8: Recursion in JavaScript
+function calculateSavings(years, amount){
+    if (years >= 10) return amount;  //The function will calculate savings until the number of years reaches 10 which it will stop at
+    return calculateSavings(years + 1, (amount + (amount * 0.05)))}  //The function will return the calculated amount of projected savings while also adding a year until it reaches 10 each time
+
+//Call the function to plug in the parameter values and keep track of the total projected saving each time an amount it added
+console.log(`Projected Savings: $${calculateSavings(8, 1000).toFixed(2)}`)
+console.log(`Projected Savings: $${calculateSavings(5, 5000).toFixed(2)}`)
