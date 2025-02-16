@@ -32,16 +32,12 @@ console.log(`Service Fee: $${calculateServiceFee(500, "Standard").toFixed(2)}`)
 
 //Task 4: Parameters and Arguments
 function calculateRentalCost(days, carType, insurance = false) {
-    let rentalCost = 0;  
-    if (carType === "Economy") rentalCost = (40*days);
-    else if (carType === "Standard") rentalCost = (60*days);
-    else if (carType === "Luxury") rentalCost = (100*days);
-    else;   //The if-else function filters through the parameters and applies the calculation for the rental cost
+    let carEvaluation = {"Economy": 40, "Standard": 60, "Luxury": 100};
+    let rentalCost = (carEvaluation[carType]*days);
     if (insurance) rentalCost += (20*days);
-    else rentalCost;  //The if-else function will add $20 if there is insurance
     return rentalCost}
 
-//Call the function to plug in the parameters as the if-else statments filter to apply the right calculation
+//Call the function to plug in the parameters as the function pulls out the correct values to then plug into the calculation for rental cost.
 console.log(`Total Rental Cost: $${calculateRentalCost(3, "Economy", true)}`)
 console.log(`Total Rental Cost: $${calculateRentalCost(5, "Luxury", false)}`)
 
